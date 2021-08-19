@@ -1,0 +1,53 @@
+.red { color:red}
+
+body{
+    min-height: 100vh;
+    display: flex;
+}
+
+.grovalNavigation{
+    
+    flex: 1;
+
+    text-align: center;
+
+    background-color: white;
+
+    color:black;
+}
+
+.localNavigation{
+    
+    flex: 1;
+
+    text-align: center;
+
+    background-color:white;
+
+    color:black;
+}
+
+.content{
+    flex: 2;
+    text-align: center;
+    background-color:lightslategray;
+}
+
+.js-addTask-value{
+    display: block;
+    flex-flow: column;
+    width: 400px;
+    margin: auto;
+}
+
+.js-addTask-trigger{
+    display: inline;
+}
+
+.js-addTask-delete{
+    display: inline;
+}
+
+.check{
+    display: inline;
+}

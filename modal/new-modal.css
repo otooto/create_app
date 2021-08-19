@@ -1,0 +1,67 @@
+.modal{
+
+    width: 50%;
+    z-index: 2;
+
+
+}
+
+body{
+    font-size: 20px;
+    height: 1300px;
+}
+
+
+.content{
+    
+    text-align: center;
+}
+
+
+
+.js-modal-open{
+
+    cursor: pointer;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 12px;
+    background: #4caf50;
+    color: white;
+}
+
+
+#mask2{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#mask{
+
+    position: fixed;
+    background-color: rgba(119, 44, 44, 0.4);
+    width: 100%;
+    min-height: 100vh;
+
+}
+
+/*
+.modal{
+    background: #fff;
+    color: #555;
+    width: 300px;
+    padding: 40px;
+    border-radius: 4px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 3;
+}
+*/
