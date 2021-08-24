@@ -3,26 +3,29 @@
     width: 50%;
     z-index: 2;
 
-
 }
 
+/*bodyに適応*/
 body{
     font-size: 20px;
     height: 1300px;
 }
 
 
+/**/
 .content{
     
+    /*親ブロックとなるdivで調節*/
     text-align: center;
+    /*width: 1000px*/
 }
 
 
+/*web上に表示されているボタン群*/
+.close_modal_button,.js-modal-open{
 
-.js-modal-open{
-
+    /*カーソルがリンクを示すポインターとなる。指をさすのが出てくる*/
     cursor: pointer;
-    width: 200px;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 12px;
@@ -30,28 +33,25 @@ body{
     color: white;
 }
 
-
-#mask2{
-    background: rgba(0, 0, 0, 0.4);
-    position: fixed;
+/*<div class ="modal_area" id="modal">以下に反映*/
+#modal{
+    text-align:center;
+    /*display: none;*/
+    background: rgba(0,0,0, 0.5);
+    /*要素の配置方法を指定する。fixedではスクロールしても位置が固定されたままになる。*/
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 2;
-}
-
-#mask{
-
+    z-index: 1;
+    /*これがあると全体表示になった。*/
     position: fixed;
-    background-color: rgba(119, 44, 44, 0.4);
-    width: 100%;
-    min-height: 100vh;
 
 }
 
-/*
-.modal{
+
+#modal_area{
+
     background: #fff;
     color: #555;
     width: 300px;
@@ -62,6 +62,11 @@ body{
     left: 0;
     right: 0;
     margin: 0 auto;
-    z-index: 3;
+    z-index: 2;
 }
-*/
+
+.hidden{
+
+    display: none;
+
+}
