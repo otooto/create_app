@@ -1,0 +1,19 @@
+#book_title {
+
+    display: flex;
+	flex-wrap: wrap;
+
+}
+
+.area{
+
+    text-align: center;
+    width: 300px;
+
+}
+
+p{
+
+    color: #a79c9c;
+
+}
