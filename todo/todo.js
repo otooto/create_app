@@ -34,7 +34,6 @@ ollDelete.addEventListener('click', () => {
 
 });
 
-
 //タスクが完了
 const finishTask = listItem => {
 
@@ -49,24 +48,10 @@ const finishTask = listItem => {
     finish.remove();
 
     //document.getElementById('finish').remove();
-
-
     //console.log(finish);
 
-    //finish.remove();
-
-
-
     listItem.classList.add("red");
-    //classを追加。これでhtml側にリンクしているcssを呼び出す。
 
-    //listItem.removeChild("")
-    
-    //listItem.textContent = "タスク終了";
-
-
-    //console.log(listItem);
-    
 } 
 
 const addTask = task => {

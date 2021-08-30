@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>local Storageユニット</title>
+    <meta charset="utf-8">
+    <!--ウェブページの内容をSNS,Twitterに表示する為の情報。-->
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <!--IEをX-UA-Compatibleで指定した互換バージョンで表示される。content="IE=edge"は利用者のPC内のIEの最新環境で表示をする。これはなくてもいいタグ-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--レスポンシブに対応-->
+    <meta name="viewport" content="width=device-width">
+    <!--携帯電話の電話番号がリンク扱いされるのを防ぐ-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--グーグル検索で記述したページ内容を表示できる。-->
+    <meta name="description" content="localStorageのテスト">
+    <!--電話番号をブラウザに紐づけるのを回避-->
+    <meta name="format-detection" content="email=no,telephone=no,address=no">
+    <!--linkタグ 外部リソースへのリンクを設定できる
+    <link rel="stylesheet" href="todo.css">
+    -->
+</head>
+
+
+<body>
+
+    <section>
+        <div>
+            <h1>local Storageの検証をします。</h1>
+
+            <!-- このレベルならばformはなくても良いと思う-->
+            <form action="">
+
+                <div>
+                    <label>ISBN
+                        <!--nameタグでフィールドに名前をつける-->
+                        <input class="input_isbn" type="text" name="ISBN_number" placeholder="ISBNコードを入力してください" size="30px">
+                        <button type="button" onclick="click_js()">送信する</button>
+                        <button type="button" onclick="del_click_js()">削除</button>
+                        <button type="button" onclick="show_storage()">確認</button>
+                        <button type="button" onclick="test()">確認2</button>
+                    </label>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="./localstrage.js"></script>
+
+</body>
+
+
+</html>
