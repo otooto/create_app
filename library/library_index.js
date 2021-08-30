@@ -1,9 +1,16 @@
+//これで入力フォームの値を取得する
+const textvalue = document.getElementsByClassName("input_isbn")[0];
+
+let flag = 0;
+
 //クリックしたら入力があるか、空白か判定
 const searchBook = () => {
 
     try {
         //入力フォームのISBNコードを代入
-        const input_information = document.getElementById("ISBN_CODE").value;
+        //const input_information = document.getElementById("ISBN_CODE").value;
+
+        const input_information = textvalue.value;
 
         //空白時にエラー扱いする
         if(input_information == ""){
@@ -13,12 +20,23 @@ const searchBook = () => {
         //エラーの場合はここは呼ばれない。問題ないなら通る
         console.log(input_information);
         //引数に入力値のISBNを渡す
-        createtitle(input_information);
+
+        serchstorage(input_information);
+
+        //フラグが立っている場合には、既に登録済みという事。立ってない時は新たに表示する。
+        if(flag === 0){
+            addlocalstrage(input_information);
+            createtitle(input_information);
+        }
+
 
     } catch (error) {
         //エラーの場合はブラウザに警告を出す
         alert("入力してください");
     }
+
+    //ここでフラグは0にする。関数内だとそこにいかない場合には直せない
+    flag = 0;
 
 }
 
@@ -26,6 +44,8 @@ const searchBook = () => {
 let g_title;
 
 let g_photo;
+
+let g_big_photo;
 
 //楽天ブックス書籍検索APIからタイトルを取得して表示する。
 const createtitle = async (input_information) => {
@@ -57,12 +77,49 @@ const createtitle = async (input_information) => {
             g_photo = json_Items.largeImageUrl;
             g_title = json_Items.title;
             console.log(g_title);
-
             let element = document.getElementById('book_title');
             //指定したDOMツリー内の第一引数で指定した位置に、第二引数の内容を代入
             element.insertAdjacentHTML('beforeend',`<div class="area" ><img src=${g_photo} id="position" alt="書籍の表紙" title=${g_title}></img><p>${g_title}</p></div>`);
-
         });
+
+    
+}
+
+//探索を実行。探索結果がヒットした時にはフラグを立てる
+const serchstorage = isbn_value => {
+
+    let check;
+    //strageの配列分回す事が出来る
+    for(let l = 0; l < localStorage.length; l++){
+
+        if(isbn_value === localStorage.key(l)){
+
+            check = localStorage.getItem(l);
+            console.log(check);
+            flag = 1;
+
+        }
+    }
+}
+
+//記録用にlocalStrageに記録する。
+const addlocalstrage = value => {
+
+    console.log(value);
+
+    //Storageオブジェクト。これがlocalStorageの元
+    //Storage.length = Storageオブジェクトの保存されているデータアイテム数を返す
+    localStorage.setItem(value,value);
+
+    console.log(localStorage.length);
+
+};
+
+
+//確認用の別関数
+const check = () =>{
+
+    console.log(g_title);
 }
 
 //最初のテスト関数
@@ -87,12 +144,11 @@ async function test(){
         console.log(Object.keys(json.Items));
     });
 
-
-    //確認用の別関数
-const check = () =>{
-
-    console.log(g_title);
-}
 }
 
+const del_storage = () => {
+
+    localStorage.clear();
+
+}
 

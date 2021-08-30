@@ -16,23 +16,20 @@
         <meta name="format-detection" content="email=no,telephone=no,address=no">
         <title>librarypage</title>
         <link rel="stylesheet" href="library.css">
-
     </head>
 
     <body>
-
         <section>
-
             <h1>ISBNから書籍タイトルを調べる</h1>
             <p>ISBNコードを数値のみ入力してください</p>
-            <p><input type="text" id="ISBN_CODE" required><button id="ISBN_button" onclick="searchBook()">書籍検索</button></p>
+            <p><input type="text" class="input_isbn" id="ISBN_CODE" required><button id="ISBN_button" onclick="searchBook()">書籍検索</button></p>
+            <button type="button" onclick="del_storage()">削除</button>
+
             <!--以下に要素が追加されていく-->
             <div id = "book_title">
             </div>
         </section>
-
+        
         <script src="./library_index.js"></script>
-
     </body>
-
 </html>
